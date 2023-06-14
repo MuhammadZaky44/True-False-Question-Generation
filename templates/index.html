@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True/False Question Generator for Education Purposes</title>
+
+    <!-- Iconscout CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    
+    <!-- Google Fonts (MONTSERRAT) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/1bf95c1d6a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container nav__container">
+            <a href="#"><h4>Home Logo</h4></a>
+            <ul class="nav__menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#special_thanks">Special Thanks</a></li>
+                <li><a href="#socials">Socials</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Template-based Frameworks</h2>
+            <ul>
+                <li><a href="{{ url_for('coord') }}"><i class="fa-solid fa-pen"></i>Coordination Modification</i></a></li>
+                <li><a href="{{ url_for('negation') }}"><i class="fa-solid fa-pen"></i>Negation Modification</i></a></li>
+                <li><a href="{{ url_for('number') }}"><i class="fa-solid fa-pen"></i>Number Modification</i></a></li>
+                <li><a href="{{ url_for('sinto') }}"><i class="fa-solid fa-pen"></i>Synonym & Antonym Modification</i></a></li>
+            </ul>
+        </div>
+        <div class="main__content">
+            <div class="header">Welcome to True/False Question Generator Website!</div>
+            <div class="about">
+                <h3>About</h3>
+                <div class="about__content">
+                    <p>This website was created to objectify my final project and to meet the criteria to publish my work to conference. The title of my final project is <em>Automatic True/False Question Generation for Educational Purposes</em>. I was working on in this project to make a true/false question generator using Natural Language Processing (NLP) methods, using Indonesian text as the baseline. </p>
+                    <p>The original paper that I used as the main reference is Zou et.al. (2022). They were using between 2 frameworks, which are Template-based framework and Generative Framework. In my project I only took Template-based Framework as my reference</p>
+                    <p>The scope of problem of my project are: </p>
+                    <p> - The baseline of text and NLP methods I used is in Bahasa Indonesia</p> 
+                    <p> - The main subject that I aim for is between elementary student to first year junior high school student</p> 
+                  
+                </div>
+            </div>
+            <div class="special__thanks" id="special_thanks">
+                <h3>Special Thanks</h3>
+                <div class="special__thanks__content">
+                    <p>I would like to thank some resources that are helping me to build my program, and I used their work as my reference, and modify them. So, I wanted to mention them here, in special thanks section.</p>
+                    <p>I would like to thank:</p>
+                    <div class="special__thanks__list">
+                        <ul>
+                            <li> - Yudi Wibisono, I used his POS Tagger model in my Coordination Modification Template method. You can access his blog regarding this model, <a href="https://yudiwbs.wordpress.com/2018/02/20/pos-tagger-bahasa-indonesia-dengan-pytho/" target="_blank">here</a></li>
+                            <li> - Victoria Anugrah Lestari, I used her thesaurus dictionary in json file for my Synonym/Antonym Substitution method. You can look into her github for this work, <a href="https://github.com/victoriasovereigne/tesaurus">here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="contact">
+                    <h3>Socials</h3>
+                    <div class="contact__content">
+                        If you have something to ask regarding my work, then you can reach me from below:
+                    </div>
+                    <div class="socials" id="socials">
+                        <li><a href="https://www.linkedin.com/in/zakyfth/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a></li>
+                        <li><a href="https://github.com/MuhammadZaky44" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
