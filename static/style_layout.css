@@ -1,0 +1,14 @@
+* {
+    padding-bottom: 8px;
+    text-decoration: none;
+    /* list-style: none; */
+    box-sizing: border-box;
+    width: 75%;
+    margin-left: 5px;
+    text-align: justify;
+}
+
+h1 {
+    font-weight: 600; 
+    text-align: left;
+}
