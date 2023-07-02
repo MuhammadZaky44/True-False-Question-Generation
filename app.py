@@ -7,7 +7,7 @@ import json
 import re
 from nltk.tag import CRFTagger
 
-##### Number Modification #####
+#################### Number Modification ####################
 def num_mod(text):
   # Membagi kalimat menjadi token
   words = word_tokenize(text)
@@ -23,13 +23,12 @@ def num_mod(text):
   text_modified = " ".join(words)
 
   return text_modified
-#### End of Number Modification #####
+#################### End of Number Modification ####################
 
-##### Synonym/Antonym Modification #####
+#################### Synonym/Antonym Modification ####################
 def load(filename):	
 	with open(filename) as data_file:
 		data = json.load(data_file)	
-
 	return data
 
 mydict = load('files/dict.json')
@@ -44,7 +43,6 @@ def getAntonym(word):
 	if word in mydict.keys():
 		if 'antonim' in mydict[word].keys():
 			return mydict[word]['antonim']
-
 	return []
 
 def preprocessing(text):
@@ -84,26 +82,26 @@ def replace_antonyms(text):
     new_word = antonyms[0] 
     text = re.sub(r'\b{}\b'.format(tokens[index_to_replace]), f'<span style="color:red">{new_word}</span>', text)
     return text
-##### End of Synonym/Antonym Modification #####
+#################### End of Synonym/Antonym Modification ####################
 
-##### Negation Modification #####
+#################### Negation Modification ####################
 negation_words = ['tidak', 'bukan', 'belum', 'tak', 'jangan']
+
 def remove_negation_words(text):
     negation_pattern = r'\b(' + '|'.join(negation_words) + r')\b'
     text = re.sub(negation_pattern, '', text, flags=re.IGNORECASE)
     text = re.sub(r'\s+', ' ', text).strip()
     return text
-##### End of Negation Modification #####
+#################### End of Negation Modification ####################
 
-##### Coordination Modification #####
+#################### Coordination Modification ####################
 def preprocessing_coord(text):
     tokenized = word_tokenize(text)
     return tokenized
-##### End of Coordination Modification #####
+#################### End of Coordination Modification ####################
 
 
 app = Flask(__name__)
-# app.config["SECRET_KEY"] = "thisIsSecretKey"
 
 @app.route('/')
 def index():
@@ -131,9 +129,6 @@ def coord():
         ct.set_model_file('files/all_indo_man_tag_corpus_model.crf.tagger')
         tagged_sentence = ct.tag(tokens)
         tagged_sentences.append(tagged_sentence)
-        # chunk_parser = RegexpParser(r'Chunk: {<NN.?>*<VB.?>*<JJ.?>*<CC>?}')
-        # chunked_sentence = chunk_parser.parse(tagged_sentence)
-        # chunked_sentences.append(chunked_sentence)
 
     # Checking if the sentences has the Noun - CC - Noun rule. If Noun - CC - Noun sequence found, then the first Noun and CC will be removed from the sentence.
     for i in range(len(tagged_sentences)):
