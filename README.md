@@ -15,3 +15,6 @@ There are 4 methods in this model, which are:
 - Now activate the flask with ``` python app.py ```.
 - If you are done with the app, then ``` ctrl + c ``` to exit the session.
 - Now deactivate your virtual environment with running ``` deactivate ```.
+
+## Paper & Copyright
+Paper status is still under process of publication following with the copyright.
